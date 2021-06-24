@@ -50,7 +50,7 @@ public class ViewModel  implements Observer {
 		this.Left = new LineChart<>(this.model.x,this.model.y);
 		this.Bottom=new LineChart<>(this.model.X,this.model.y);
 		play = ()->{
-			if(this.model.ts != null)
+			if(this.model.anomaly != null)
 			    this.model.play();
 			else
 				Notifications.setValue("Please choose a correct CSV flight file first.");
@@ -188,7 +188,7 @@ public class ViewModel  implements Observer {
 			TimeStep.setValue(this.model.timeStep.getValue());
 			if (TimeStep.getValue() % 10 == 0) {
 				Timer.setValue(model.GetCurrentTime());
-				if((TimeStep.getValue() % 50 == 0)&&(!Notifications.getValue().equals("")))
+				if((TimeStep.getValue() % 50 == 0)&&(!Notifications.getValue().equals("")));
 					model.setNotifications("");
 			}
 			Notifications.setValue(model.Notifications);
